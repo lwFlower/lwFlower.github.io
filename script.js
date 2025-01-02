@@ -13,10 +13,12 @@ function loadPasswords() {
   passwordList.innerHTML = '';
   passwords.forEach((entry, index) => {
     const div = document.createElement('div');
-    div.textContent = `${entry.login} (${entry.url}): ${entry.password}`;
+    const textSpan = document.createElement('span');
+    textSpan.textContent = `${entry.login} (${entry.url}): ${entry.password}`;
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
     deleteButton.onclick = () => deletePassword(index);
+    div.appendChild(textSpan);
     div.appendChild(deleteButton);
     passwordList.appendChild(div);
   });
