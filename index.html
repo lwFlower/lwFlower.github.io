@@ -9,16 +9,21 @@
     <h1>Password Manager</h1>
     <div id="password-list"></div>
     <form id="password-form">
-        <input type="text" id="login" placeholder="Login" required />
-        <input type="text" id="url" placeholder="URL" required />
-        <input type="password" id="password" placeholder="Password" required />
-        <select id="password-strength">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="strong">Strong</option>
-        </select>
-        <button type="button" id="generate-password">Generate</button>
-        <button type="submit">Add</button>
+        <div class="row">
+            <input type="text" id="login" placeholder="Login" required />
+            <input type="text" id="url" placeholder="URL" required />   
+        </div>
+        <div class="row">
+            <input type="password" id="password" placeholder="Password" required />
+            <select id="password-strength">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="strong">Strong</option>
+            </select>
+            <button type="button" id="generate-password">Generate</button>
+            <button type="submit">Add</button>
+        </div>
+        
     </form>
     <script src="script.js"></script>
 </body>
