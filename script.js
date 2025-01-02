@@ -55,16 +55,21 @@ function generatePassword() {
     password += charset[randomIndex];
   }
   passwordInput.value = password;
+  return password;
 }
 
 passwordForm.addEventListener('submit', event => {
   event.preventDefault();
-  addPassword(loginInput.value, urlInput.value, passwordInput.value);
+  const generatedPassword = passwordInput.value || generatePassword();
+  addPassword(loginInput.value, urlInput.value, generatedPassword);
   loginInput.value = '';
   urlInput.value = '';
   passwordInput.value = '';
 });
 
-generatePasswordButton.addEventListener('click', generatePassword);
+generatePasswordButton.addEventListener('click', () => {
+    const generatedPassword = generatePassword();
+    passwordInput.value = generatedPassword;
+});
 
 loadPasswords();
